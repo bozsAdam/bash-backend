@@ -14,5 +14,6 @@ public class Player {
     private long id;
     private String name;
     private int health;
+    private int currentRoll;
 
 }

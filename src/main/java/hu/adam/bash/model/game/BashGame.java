@@ -17,6 +17,7 @@ public class BashGame implements Game {
 
     private long id;
     private int currentRound;
+    private int currentHighest;
 
     @Override
     public void stepOneRound(int rollValue, long playerId) {
