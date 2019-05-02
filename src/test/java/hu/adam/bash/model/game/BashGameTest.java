@@ -1,7 +1,6 @@
 package hu.adam.bash.model.game;
 
 import hu.adam.bash.model.player.Player;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -31,7 +30,7 @@ class BashGameTest {
 
     @Test
     void checkPlayersHealthWithoutPlayers() {
-        assertThrows(RuntimeException.class,() -> bashGame.checkPlayersHealth());
+        assertThrows(RuntimeException.class,() -> bashGame.isEveryoneDead());
     }
 
     @Test
@@ -54,7 +53,7 @@ class BashGameTest {
 
         bashGame.setPlayers(Arrays.asList(player,player1,player2));
 
-        assertTrue(bashGame.checkPlayersHealth());
+        assertTrue(bashGame.isEveryoneDead());
     }
 
     @Test
@@ -77,7 +76,7 @@ class BashGameTest {
 
         bashGame.setPlayers(Arrays.asList(player,player1,player2));
 
-        assertTrue(bashGame.checkPlayersHealth());
+        assertTrue(bashGame.isEveryoneDead());
     }
 
     @Test
@@ -100,7 +99,7 @@ class BashGameTest {
 
         bashGame.setPlayers(Arrays.asList(player,player1,player2));
 
-        assertFalse(bashGame.checkPlayersHealth());
+        assertFalse(bashGame.isEveryoneDead());
     }
 
 }
