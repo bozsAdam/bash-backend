@@ -8,10 +8,21 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Builder
 public class BashGame implements Game {
+
+    BashGame(){
+        this.gamePhase = Phase.OPEN;
+    }
+
+    public BashGame(List<Player> players, long id, int currentRound, int currentHighest, long currentPlayerId) {
+        this.players = players;
+        this.id = id;
+        this.currentRound = currentRound;
+        this.currentHighest = currentHighest;
+        this.currentPlayerId = currentPlayerId;
+        this.gamePhase = Phase.OPEN;
+    }
 
     @Singular
     private List<Player> players = new ArrayList<>();
