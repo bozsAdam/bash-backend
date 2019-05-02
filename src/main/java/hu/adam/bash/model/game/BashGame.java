@@ -5,6 +5,7 @@ import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 @NoArgsConstructor
@@ -28,7 +29,11 @@ public class BashGame implements Game {
 
     @Override
     public boolean isEveryoneDead() {
-        return false;
+        int alivePlayerCount = (int) players.stream()
+                .filter(player -> player.getHealth() > 0)
+                .count();
+
+        return alivePlayerCount == 0;
     }
 
     @Override
