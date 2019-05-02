@@ -4,6 +4,10 @@ public interface Game {
 
     void stepOneRound(int rollValue,long playerId);
 
-    boolean checkPlayersHealth();
+    boolean isEveryoneDead();
+
+    void startGame();
+
+    void endGame();
 
 }

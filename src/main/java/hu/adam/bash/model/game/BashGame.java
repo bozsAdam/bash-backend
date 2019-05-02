@@ -18,6 +18,8 @@ public class BashGame implements Game {
     private long id;
     private int currentRound;
     private int currentHighest;
+    private long currentPlayerId;
+    private Phase gamePhase;
 
     @Override
     public void stepOneRound(int rollValue, long playerId) {
@@ -25,7 +27,17 @@ public class BashGame implements Game {
     }
 
     @Override
-    public boolean checkPlayersHealth() {
+    public boolean isEveryoneDead() {
         return false;
+    }
+
+    @Override
+    public void startGame() {
+
+    }
+
+    @Override
+    public void endGame() {
+
     }
 }
