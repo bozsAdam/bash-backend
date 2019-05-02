@@ -1,9 +1,10 @@
-package hu.adam.bash.model;
+package hu.adam.bash.model.game;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import hu.adam.bash.model.player.Player;
+import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @NoArgsConstructor
@@ -11,10 +12,19 @@ import lombok.NoArgsConstructor;
 @Builder
 public class BashGame implements Game {
 
-    private List<Player>
+    @Singular
+    private List<Player> players = new ArrayList<>();
+
+    private long id;
+    private int currentRound;
 
     @Override
     public void stepOneRound(int rollValue, long playerId) {
 
+    }
+
+    @Override
+    public boolean checkPlayersHealth() {
+        return false;
     }
 }
